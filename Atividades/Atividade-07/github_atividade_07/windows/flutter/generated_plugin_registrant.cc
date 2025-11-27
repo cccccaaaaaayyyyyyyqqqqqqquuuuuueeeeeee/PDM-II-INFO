@@ -6,6 +6,12 @@
 
 #include "generated_plugin_registrant.h"
 
+#include <url_launcher_windows/url_launcher_windows.h>
+#include <windows_to_front/windows_to_front_plugin_c_api.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
+  UrlLauncherWindowsRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("UrlLauncherWindows"));
+  WindowsToFrontPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("WindowsToFrontPluginCApi"));
 }
